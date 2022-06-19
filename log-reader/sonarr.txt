@@ -1,0 +1,1742 @@
+2022-06-19 00:30:54.9|Info|HousekeepingService|Running housecleaning tasks
+2022-06-19 00:30:55.9|Info|Database|Vacuuming Log database
+2022-06-19 00:30:56.3|Info|Database|Log database compressed
+2022-06-19 00:30:56.5|Info|Database|Vacuuming Main database
+2022-06-19 00:30:59.0|Info|Database|Main database compressed
+2022-06-19 00:34:25.0|Info|RecycleBinProvider|Recycle Bin has not been configured, cannot cleanup.
+2022-06-19 00:38:55.1|Info|ImportListSyncService|Starting Import List Sync
+2022-06-19 00:38:55.1|Info|ImportListSyncService|Processing 0 list items
+2022-06-19 00:38:55.2|Info|ImportListSyncService|Import List Sync Completed. Items found: 0, Series added: 0
+2022-06-19 00:56:55.9|Info|RssSyncService|Starting RSS Sync
+2022-06-19 00:56:57.7|Warn|Torznab|Indexer 1337x rss sync didn't cover the period between 6/18/2022 8:48:00 AM and 6/19/2022 4:56:57 AM UTC. Search may be required.
+2022-06-19 00:56:58.2|Warn|Torznab|Indexer TPB rss sync didn't cover the period between 6/19/2022 3:36:19 AM and 6/19/2022 3:50:11 AM UTC. Search may be required.
+2022-06-19 00:57:02.8|Info|DownloadDecisionMaker|Processing 325 releases
+2022-06-19 00:57:09.9|Info|RssSyncService|RSS Sync Completed. Reports found: 325, Reports grabbed: 0
+2022-06-19 01:01:02.2|Info|RenameEpisodeFileService|Renaming 10 files for Elfen Lied
+2022-06-19 01:01:03.1|Info|RenameEpisodeFileService|Selected episode files renamed for Elfen Lied
+2022-06-19 01:01:37.5|Info|SceneMappingService|Updating Scene mappings
+2022-06-19 01:01:41.8|Info|RefreshSeriesService|Updating Elfen Lied
+2022-06-19 01:01:42.6|Info|RefreshEpisodeService|Starting episode info refresh for: [75941][Elfen Lied]
+2022-06-19 01:01:42.7|Info|RefreshEpisodeService|Finished episode refresh for series: [75941][Elfen Lied].
+2022-06-19 01:01:42.7|Info|DiskScanService|Scanning Elfen Lied
+2022-06-19 01:01:44.1|Info|DiskScanService|Completed scanning disk for Elfen Lied
+2022-06-19 01:01:44.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 01:01:44.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 01:01:44.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 01:01:44.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 01:03:30.9|Error|CommandExecutor|Error occurred while executing task MessagingCleanup
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 01:09:49.7|Error|EventAggregator|TaskManager failed while processing [CommandExecutedEvent]
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Jobs.ScheduledTaskRepository.SetLastExecutionTime (System.Int32 id, System.DateTime executionTime) [0x00014] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\ScheduledTaskRepository.cs:36 
+  at NzbDrone.Core.Jobs.TaskManager.Handle (NzbDrone.Core.Messaging.Events.CommandExecutedEvent message) [0x00060] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\TaskManager.cs:212 
+  at NzbDrone.Core.Messaging.Events.EventAggregator.PublishEvent[TEvent] (TEvent event) [0x0011a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Events\EventAggregator.cs:92 
+
+2022-06-19 01:18:21.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 01:20:34.8|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 01:23:01.3|Info|RenameEpisodeFileService|Renaming 3 files for Elfen Lied
+2022-06-19 01:23:01.6|Info|RenameEpisodeFileService|Selected episode files renamed for Elfen Lied
+2022-06-19 01:45:04.4|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 01:53:15.8|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 01:57:10.8|Info|RssSyncService|Starting RSS Sync
+2022-06-19 01:57:11.9|Warn|Torznab|Indexer 1337x rss sync didn't cover the period between 6/19/2022 4:56:57 AM and 6/19/2022 5:57:11 AM UTC. Search may be required.
+2022-06-19 01:57:12.1|Warn|Torznab|Indexer TPB rss sync didn't cover the period between 6/19/2022 4:27:58 AM and 6/19/2022 4:50:12 AM UTC. Search may be required.
+2022-06-19 01:57:16.8|Info|DownloadDecisionMaker|Processing 322 releases
+2022-06-19 01:57:23.6|Info|RssSyncService|RSS Sync Completed. Reports found: 322, Reports grabbed: 0
+2022-06-19 01:59:45.1|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 02:02:39.0|Error|TaskExtensions|Task Error
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.InsertQueryBuilder`1[T].Execute () [0x00046] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\InsertQueryBuilder.cs:140 
+  at Marr.Data.DataMapper.Insert[T] (T entity) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:728 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].Insert (TModel model) [0x00030] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:119 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0015a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:126 
+  at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper delegate-invoke) System.Func`6[System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,System.Object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger,System.Object].invoke_TResult_T1_T2_T3_T4_T5(System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push (System.String commandName, System.Nullable`1[T] lastExecutionTime, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x000b7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:139 
+  at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands () [0x00043] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\Scheduler.cs:42 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+
+2022-06-19 02:15:47.6|Info|SceneMappingService|Updating Scene mappings
+2022-06-19 02:20:24.0|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 02:20:24.0|Error|TaskExtensions|Task Error
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.InsertQueryBuilder`1[T].Execute () [0x00046] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\InsertQueryBuilder.cs:140 
+  at Marr.Data.DataMapper.Insert[T] (T entity) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:728 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].Insert (TModel model) [0x00030] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:119 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0015a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:126 
+  at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper delegate-invoke) System.Func`6[System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,System.Object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger,System.Object].invoke_TResult_T1_T2_T3_T4_T5(System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push (System.String commandName, System.Nullable`1[T] lastExecutionTime, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x000b7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:139 
+  at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands () [0x00043] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\Scheduler.cs:42 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+
+2022-06-19 02:57:31.1|Info|RssSyncService|Starting RSS Sync
+2022-06-19 02:57:31.5|Warn|HttpClient|HTTP Error - Res: [GET] https://api.nzb.su/api?t=tvsearch&cat=5030,5040&extended=1&apikey=(removed)&offset=0&limit=100: 429.TooManyRequests (116 bytes)
+<?xml version="1.0" encoding="UTF-8"?>
+<error code="500" description="Request limit reached. Retry in 0 minutes."/>
+
+2022-06-19 02:57:31.5|Warn|Newznab|API Request Limit reached for Nzb.su
+2022-06-19 02:57:32.2|Warn|Torznab|Indexer 1337x rss sync didn't cover the period between 6/19/2022 5:57:11 AM and 6/19/2022 6:57:32 AM UTC. Search may be required.
+2022-06-19 02:57:39.1|Info|DownloadDecisionMaker|Processing 330 releases
+2022-06-19 02:57:46.0|Info|RssSyncService|RSS Sync Completed. Reports found: 330, Reports grabbed: 0
+2022-06-19 03:16:33.2|Error|CommandExecutor|Error occurred while executing task ProcessMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 03:52:03.3|Info|RefreshSeriesService|Skipping refresh of series: 11.22.63
+2022-06-19 03:52:03.3|Info|DiskScanService|Scanning 11.22.63
+2022-06-19 03:52:03.4|Info|DiskScanService|Completed scanning disk for 11.22.63
+2022-06-19 03:52:03.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:03.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:03.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:03.5|Info|ExistingExtraFileService|Found 5 possible extra files, imported 5 files.
+2022-06-19 03:52:03.5|Info|RefreshSeriesService|Skipping refresh of series: 86: Eighty Six
+2022-06-19 03:52:03.5|Info|DiskScanService|Scanning 86: Eighty Six
+2022-06-19 03:52:03.6|Info|DiskScanService|Completed scanning disk for 86: Eighty Six
+2022-06-19 03:52:03.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:03.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:03.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:03.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:03.7|Info|RefreshSeriesService|Skipping refresh of series: Amagi Brilliant Park
+2022-06-19 03:52:03.7|Info|DiskScanService|Scanning Amagi Brilliant Park
+2022-06-19 03:52:03.7|Info|DiskScanService|Completed scanning disk for Amagi Brilliant Park
+2022-06-19 03:52:03.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:03.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:03.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:03.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:03.8|Info|RefreshSeriesService|Skipping refresh of series: Angels of Death
+2022-06-19 03:52:03.8|Info|DiskScanService|Scanning Angels of Death
+2022-06-19 03:52:03.9|Info|DiskScanService|Completed scanning disk for Angels of Death
+2022-06-19 03:52:03.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:03.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:03.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:03.9|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:04.0|Info|RefreshSeriesService|Skipping refresh of series: A.P. Bio
+2022-06-19 03:52:04.0|Info|DiskScanService|Scanning A.P. Bio
+2022-06-19 03:52:04.1|Info|DiskScanService|Completed scanning disk for A.P. Bio
+2022-06-19 03:52:04.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:04.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:04.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:04.1|Info|ExistingExtraFileService|Found 1 possible extra files, imported 1 files.
+2022-06-19 03:52:04.2|Info|RefreshSeriesService|Updating Archer (2009)
+2022-06-19 03:52:05.3|Info|RefreshEpisodeService|Starting episode info refresh for: [110381][Archer (2009)]
+2022-06-19 03:52:05.5|Info|RefreshEpisodeService|Finished episode refresh for series: [110381][Archer (2009)].
+2022-06-19 03:52:05.6|Info|DiskScanService|Scanning Archer (2009)
+2022-06-19 03:52:05.6|Info|DiskScanService|Completed scanning disk for Archer (2009)
+2022-06-19 03:52:05.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:05.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:05.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:05.7|Info|ExistingExtraFileService|Found 7 possible extra files, imported 7 files.
+2022-06-19 03:52:05.8|Info|RefreshSeriesService|Skipping refresh of series: Avatar: The Last Airbender
+2022-06-19 03:52:05.8|Info|DiskScanService|Scanning Avatar: The Last Airbender
+2022-06-19 03:52:05.9|Info|DiskScanService|Completed scanning disk for Avatar: The Last Airbender
+2022-06-19 03:52:06.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:06.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:06.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:06.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:06.1|Info|RefreshSeriesService|Skipping refresh of series: Baka and Test: Summon the Beasts
+2022-06-19 03:52:06.1|Info|DiskScanService|Scanning Baka and Test: Summon the Beasts
+2022-06-19 03:52:06.2|Info|DiskScanService|Completed scanning disk for Baka and Test: Summon the Beasts
+2022-06-19 03:52:06.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:06.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:06.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:06.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:06.3|Info|RefreshSeriesService|Skipping refresh of series: Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside
+2022-06-19 03:52:06.3|Info|DiskScanService|Scanning Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside
+2022-06-19 03:52:06.4|Info|DiskScanService|Completed scanning disk for Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside
+2022-06-19 03:52:06.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:06.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:06.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:06.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:06.4|Info|RefreshSeriesService|Updating Barry
+2022-06-19 03:52:06.7|Info|RefreshEpisodeService|Starting episode info refresh for: [333072][Barry]
+2022-06-19 03:52:06.7|Info|RefreshEpisodeService|Finished episode refresh for series: [333072][Barry].
+2022-06-19 03:52:06.8|Info|DiskScanService|Scanning Barry
+2022-06-19 03:52:06.9|Info|DiskScanService|Completed scanning disk for Barry
+2022-06-19 03:52:06.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:06.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:06.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:06.9|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:52:07.0|Info|RefreshSeriesService|Skipping refresh of series: Beyond the Boundary
+2022-06-19 03:52:07.0|Info|DiskScanService|Scanning Beyond the Boundary
+2022-06-19 03:52:07.0|Info|DiskScanService|Completed scanning disk for Beyond the Boundary
+2022-06-19 03:52:07.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:07.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:07.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:07.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:07.2|Info|RefreshSeriesService|Skipping refresh of series: The Big Bang Theory
+2022-06-19 03:52:07.2|Info|DiskScanService|Scanning The Big Bang Theory
+2022-06-19 03:52:07.8|Info|DiskScanService|Completed scanning disk for The Big Bang Theory
+2022-06-19 03:52:07.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:07.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:07.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:07.9|Info|ExistingExtraFileService|Found 4 possible extra files, imported 4 files.
+2022-06-19 03:52:08.1|Info|RefreshSeriesService|Updating Birdie Wing -Golf Girls' Story-
+2022-06-19 03:52:08.5|Info|RefreshEpisodeService|Starting episode info refresh for: [411914][Birdie Wing -Golf Girls' Story-]
+2022-06-19 03:52:08.6|Info|RefreshEpisodeService|Finished episode refresh for series: [411914][Birdie Wing -Golf Girls' Story-].
+2022-06-19 03:52:08.6|Info|DiskScanService|Scanning Birdie Wing -Golf Girls' Story-
+2022-06-19 03:52:08.6|Info|DiskScanService|Completed scanning disk for Birdie Wing -Golf Girls' Story-
+2022-06-19 03:52:08.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:08.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:08.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:08.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:08.8|Info|RefreshSeriesService|Skipping refresh of series: Bleach
+2022-06-19 03:52:08.9|Info|DiskScanService|Scanning Bleach
+2022-06-19 03:52:09.5|Info|DiskScanService|Completed scanning disk for Bleach
+2022-06-19 03:52:09.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:09.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:09.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:09.7|Info|ExistingExtraFileService|Found 57 possible extra files, imported 57 files.
+2022-06-19 03:52:09.9|Info|RefreshSeriesService|Skipping refresh of series: Blood Blockade Battlefront
+2022-06-19 03:52:09.9|Info|DiskScanService|Scanning Blood Blockade Battlefront
+2022-06-19 03:52:10.0|Info|DiskScanService|Completed scanning disk for Blood Blockade Battlefront
+2022-06-19 03:52:10.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:10.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:10.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:10.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:10.1|Info|RefreshSeriesService|Skipping refresh of series: Blue Exorcist
+2022-06-19 03:52:10.1|Info|DiskScanService|Scanning Blue Exorcist
+2022-06-19 03:52:10.2|Info|DiskScanService|Completed scanning disk for Blue Exorcist
+2022-06-19 03:52:10.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:10.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:10.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:10.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:10.3|Info|RefreshSeriesService|Skipping refresh of series: Boarding School Juliet
+2022-06-19 03:52:10.3|Info|DiskScanService|Scanning Boarding School Juliet
+2022-06-19 03:52:10.3|Info|DiskScanService|Completed scanning disk for Boarding School Juliet
+2022-06-19 03:52:10.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:10.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:10.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:10.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:10.5|Info|RefreshSeriesService|Skipping refresh of series: Bones
+2022-06-19 03:52:10.5|Info|DiskScanService|Scanning Bones
+2022-06-19 03:52:10.8|Info|DiskScanService|Completed scanning disk for Bones
+2022-06-19 03:52:11.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:11.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:11.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:11.1|Info|ExistingExtraFileService|Found 109 possible extra files, imported 109 files.
+2022-06-19 03:52:11.3|Info|RefreshSeriesService|Skipping refresh of series: Born to Kill (2005)
+2022-06-19 03:52:11.3|Info|DiskScanService|Scanning Born to Kill (2005)
+2022-06-19 03:52:11.3|Info|DiskScanService|Completed scanning disk for Born to Kill (2005)
+2022-06-19 03:52:11.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:11.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:11.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:11.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:11.4|Info|RefreshSeriesService|Updating The Boys
+2022-06-19 03:52:11.7|Info|RefreshEpisodeService|Starting episode info refresh for: [355567][The Boys]
+2022-06-19 03:52:11.8|Info|RefreshEpisodeService|Finished episode refresh for series: [355567][The Boys].
+2022-06-19 03:52:11.8|Info|DiskScanService|Scanning The Boys
+2022-06-19 03:52:12.2|Info|DiskScanService|Completed scanning disk for The Boys
+2022-06-19 03:52:12.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:12.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:12.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:12.3|Info|ExistingExtraFileService|Found 4 possible extra files, imported 4 files.
+2022-06-19 03:52:12.4|Info|RefreshSeriesService|Skipping refresh of series: Brooklyn Nine-Nine
+2022-06-19 03:52:12.4|Info|DiskScanService|Scanning Brooklyn Nine-Nine
+2022-06-19 03:52:12.7|Info|DiskScanService|Completed scanning disk for Brooklyn Nine-Nine
+2022-06-19 03:52:12.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:12.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:12.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:12.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:12.9|Info|RefreshSeriesService|Skipping refresh of series: Burn Notice
+2022-06-19 03:52:12.9|Info|DiskScanService|Scanning Burn Notice
+2022-06-19 03:52:13.1|Info|DiskScanService|Completed scanning disk for Burn Notice
+2022-06-19 03:52:13.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:13.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:13.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:13.3|Info|ExistingExtraFileService|Found 76 possible extra files, imported 76 files.
+2022-06-19 03:52:13.4|Info|RefreshSeriesService|Skipping refresh of series: A Certain Magical Index
+2022-06-19 03:52:13.4|Info|DiskScanService|Scanning A Certain Magical Index
+2022-06-19 03:52:13.5|Info|DiskScanService|Completed scanning disk for A Certain Magical Index
+2022-06-19 03:52:13.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:13.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:13.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:13.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:13.6|Info|RefreshSeriesService|Skipping refresh of series: A Certain Scientific Accelerator
+2022-06-19 03:52:13.7|Info|DiskScanService|Scanning A Certain Scientific Accelerator
+2022-06-19 03:52:13.7|Info|DiskScanService|Completed scanning disk for A Certain Scientific Accelerator
+2022-06-19 03:52:13.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:13.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:13.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:13.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:13.8|Info|RefreshSeriesService|Skipping refresh of series: A Certain Scientific Railgun
+2022-06-19 03:52:13.8|Info|DiskScanService|Scanning A Certain Scientific Railgun
+2022-06-19 03:52:13.9|Info|DiskScanService|Completed scanning disk for A Certain Scientific Railgun
+2022-06-19 03:52:13.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:13.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:14.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:14.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:14.0|Info|RefreshSeriesService|Skipping refresh of series: Chaika the Coffin Princess
+2022-06-19 03:52:14.0|Info|DiskScanService|Scanning Chaika the Coffin Princess
+2022-06-19 03:52:14.1|Info|DiskScanService|Completed scanning disk for Chaika the Coffin Princess
+2022-06-19 03:52:14.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:14.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:14.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:14.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:14.2|Info|RefreshSeriesService|Updating Chainsaw Man
+2022-06-19 03:52:14.6|Info|RefreshEpisodeService|Starting episode info refresh for: [397934][Chainsaw Man]
+2022-06-19 03:52:14.6|Info|RefreshEpisodeService|Finished episode refresh for series: [397934][Chainsaw Man].
+2022-06-19 03:52:14.6|Info|DiskScanService|Scanning Chainsaw Man
+2022-06-19 03:52:14.7|Info|DiskScanService|Completed scanning disk for Chainsaw Man
+2022-06-19 03:52:14.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:14.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:14.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:14.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:14.7|Info|RefreshSeriesService|Skipping refresh of series: Charlotte
+2022-06-19 03:52:14.7|Info|DiskScanService|Scanning Charlotte
+2022-06-19 03:52:14.8|Info|DiskScanService|Completed scanning disk for Charlotte
+2022-06-19 03:52:14.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:14.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:14.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:14.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:14.9|Info|RefreshSeriesService|Skipping refresh of series: Chernobyl
+2022-06-19 03:52:14.9|Info|DiskScanService|Scanning Chernobyl
+2022-06-19 03:52:15.0|Info|DiskScanService|Completed scanning disk for Chernobyl
+2022-06-19 03:52:15.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:15.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:15.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:15.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:15.0|Info|RefreshSeriesService|Updating Classroom of the Elite
+2022-06-19 03:52:15.4|Info|RefreshEpisodeService|Starting episode info refresh for: [329822][Classroom of the Elite]
+2022-06-19 03:52:15.4|Info|RefreshEpisodeService|Finished episode refresh for series: [329822][Classroom of the Elite].
+2022-06-19 03:52:15.8|Info|DiskScanService|Scanning Classroom of the Elite
+2022-06-19 03:52:15.8|Info|DiskScanService|Completed scanning disk for Classroom of the Elite
+2022-06-19 03:52:15.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:15.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:15.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:15.9|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:15.9|Info|RefreshSeriesService|Skipping refresh of series: Combatants Will Be Dispatched!
+2022-06-19 03:52:15.9|Info|DiskScanService|Scanning Combatants Will Be Dispatched!
+2022-06-19 03:52:16.0|Info|DiskScanService|Completed scanning disk for Combatants Will Be Dispatched!
+2022-06-19 03:52:16.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:16.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:16.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:16.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:16.1|Info|RefreshSeriesService|Skipping refresh of series: Community
+2022-06-19 03:52:16.1|Info|DiskScanService|Scanning Community
+2022-06-19 03:52:16.3|Info|DiskScanService|Completed scanning disk for Community
+2022-06-19 03:52:16.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:16.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:16.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:16.5|Info|ExistingExtraFileService|Found 16 possible extra files, imported 13 files.
+2022-06-19 03:52:16.7|Info|RefreshSeriesService|Skipping refresh of series: Cowboy Bebop
+2022-06-19 03:52:16.7|Info|DiskScanService|Scanning Cowboy Bebop
+2022-06-19 03:52:16.7|Info|DiskScanService|Completed scanning disk for Cowboy Bebop
+2022-06-19 03:52:16.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:16.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:16.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:16.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:16.8|Info|RefreshSeriesService|Skipping refresh of series: DARLING in the FRANXX
+2022-06-19 03:52:16.8|Info|DiskScanService|Scanning DARLING in the FRANXX
+2022-06-19 03:52:16.9|Info|DiskScanService|Completed scanning disk for DARLING in the FRANXX
+2022-06-19 03:52:16.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:16.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:16.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:16.9|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:52:17.0|Info|RefreshSeriesService|Skipping refresh of series: Death Parade
+2022-06-19 03:52:17.0|Info|DiskScanService|Scanning Death Parade
+2022-06-19 03:52:17.0|Info|DiskScanService|Completed scanning disk for Death Parade
+2022-06-19 03:52:17.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:17.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:17.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:17.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:17.1|Info|RefreshSeriesService|Updating Demon Slayer: Kimetsu no Yaiba
+2022-06-19 03:52:17.4|Info|RefreshEpisodeService|Starting episode info refresh for: [348545][Demon Slayer: Kimetsu no Yaiba]
+2022-06-19 03:52:17.5|Info|RefreshEpisodeService|Finished episode refresh for series: [348545][Demon Slayer: Kimetsu no Yaiba].
+2022-06-19 03:52:18.0|Info|DiskScanService|Scanning Demon Slayer: Kimetsu no Yaiba
+2022-06-19 03:52:18.2|Info|DiskScanService|Completed scanning disk for Demon Slayer: Kimetsu no Yaiba
+2022-06-19 03:52:18.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:18.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:18.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:18.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:18.3|Info|RefreshSeriesService|Updating The Devil Is a Part-Timer!
+2022-06-19 03:52:18.7|Info|RefreshEpisodeService|Starting episode info refresh for: [267441][The Devil Is a Part-Timer!]
+2022-06-19 03:52:18.7|Info|RefreshEpisodeService|Finished episode refresh for series: [267441][The Devil Is a Part-Timer!].
+2022-06-19 03:52:33.8|Info|DiskScanService|Scanning The Devil Is a Part-Timer!
+2022-06-19 03:52:33.8|Info|DiskScanService|Completed scanning disk for The Devil Is a Part-Timer!
+2022-06-19 03:52:33.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:33.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:33.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:33.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:33.9|Info|RefreshSeriesService|Skipping refresh of series: Dollhouse
+2022-06-19 03:52:33.9|Info|DiskScanService|Scanning Dollhouse
+2022-06-19 03:52:33.9|Info|DiskScanService|Completed scanning disk for Dollhouse
+2022-06-19 03:52:34.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:34.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:34.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:34.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:34.0|Info|RefreshSeriesService|Skipping refresh of series: Doogie Howser, M.D.
+2022-06-19 03:52:34.0|Info|DiskScanService|Scanning Doogie Howser, M.D.
+2022-06-19 03:52:34.3|Info|DiskScanService|Completed scanning disk for Doogie Howser, M.D.
+2022-06-19 03:52:34.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:34.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:34.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:34.5|Info|ExistingExtraFileService|Found 97 possible extra files, imported 97 files.
+2022-06-19 03:52:34.6|Info|RefreshSeriesService|Skipping refresh of series: Drake & Josh
+2022-06-19 03:52:34.6|Info|DiskScanService|Scanning Drake & Josh
+2022-06-19 03:52:34.7|Info|DiskScanService|Completed scanning disk for Drake & Josh
+2022-06-19 03:52:34.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:34.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:34.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:34.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:34.8|Info|RefreshSeriesService|Updating EDENS ZERO
+2022-06-19 03:52:35.2|Info|RefreshEpisodeService|Starting episode info refresh for: [388645][EDENS ZERO]
+2022-06-19 03:52:35.2|Info|RefreshEpisodeService|Finished episode refresh for series: [388645][EDENS ZERO].
+2022-06-19 03:52:35.3|Info|DiskScanService|Scanning EDENS ZERO
+2022-06-19 03:52:35.4|Info|DiskScanService|Completed scanning disk for EDENS ZERO
+2022-06-19 03:52:35.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:35.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:35.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:35.4|Info|ExistingExtraFileService|Found 3 possible extra files, imported 3 files.
+2022-06-19 03:52:35.4|Info|RefreshSeriesService|Skipping refresh of series: Electromagnetic Girlfriend
+2022-06-19 03:52:35.4|Info|DiskScanService|Scanning Electromagnetic Girlfriend
+2022-06-19 03:52:35.5|Info|DiskScanService|Completed scanning disk for Electromagnetic Girlfriend
+2022-06-19 03:52:35.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:35.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:35.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:35.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:35.5|Info|RefreshSeriesService|Skipping refresh of series: Elfen Lied
+2022-06-19 03:52:35.5|Info|DiskScanService|Scanning Elfen Lied
+2022-06-19 03:52:35.6|Info|DiskScanService|Completed scanning disk for Elfen Lied
+2022-06-19 03:52:35.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:35.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:35.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:35.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:35.6|Info|RefreshSeriesService|Skipping refresh of series: Erased
+2022-06-19 03:52:35.7|Info|DiskScanService|Scanning Erased
+2022-06-19 03:52:35.7|Info|DiskScanService|Completed scanning disk for Erased
+2022-06-19 03:52:35.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:35.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:35.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:35.8|Info|ExistingExtraFileService|Found 21 possible extra files, imported 21 files.
+2022-06-19 03:52:35.8|Info|RefreshSeriesService|Skipping refresh of series: Eureka Seven
+2022-06-19 03:52:35.8|Info|DiskScanService|Scanning Eureka Seven
+2022-06-19 03:52:36.0|Info|DiskScanService|Completed scanning disk for Eureka Seven
+2022-06-19 03:52:36.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:36.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:36.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:36.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:36.1|Info|RefreshSeriesService|Updating The Executioner and Her Way of Life
+2022-06-19 03:52:36.4|Info|RefreshEpisodeService|Starting episode info refresh for: [402640][The Executioner and Her Way of Life]
+2022-06-19 03:52:36.4|Info|RefreshEpisodeService|Finished episode refresh for series: [402640][The Executioner and Her Way of Life].
+2022-06-19 03:52:36.8|Info|DiskScanService|Scanning The Executioner and Her Way of Life
+2022-06-19 03:52:36.8|Info|DiskScanService|Completed scanning disk for The Executioner and Her Way of Life
+2022-06-19 03:52:36.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:36.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:36.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:36.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:37.0|Info|RefreshSeriesService|Skipping refresh of series: Fairy Tail
+2022-06-19 03:52:37.0|Info|DiskScanService|Scanning Fairy Tail
+2022-06-19 03:52:37.5|Info|DiskScanService|Completed scanning disk for Fairy Tail
+2022-06-19 03:52:37.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:38.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:38.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:38.2|Info|ExistingExtraFileService|Found 276 possible extra files, imported 276 files.
+2022-06-19 03:52:38.3|Info|RefreshSeriesService|Skipping refresh of series: The Falcon and the Winter Soldier
+2022-06-19 03:52:38.3|Info|DiskScanService|Scanning The Falcon and the Winter Soldier
+2022-06-19 03:52:38.4|Info|DiskScanService|Completed scanning disk for The Falcon and the Winter Soldier
+2022-06-19 03:52:38.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:38.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:38.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:38.4|Info|ExistingExtraFileService|Found 1 possible extra files, imported 1 files.
+2022-06-19 03:52:38.4|Info|RefreshSeriesService|Skipping refresh of series: Fate/Apocrypha
+2022-06-19 03:52:38.4|Info|DiskScanService|Scanning Fate/Apocrypha
+2022-06-19 03:52:38.5|Info|DiskScanService|Completed scanning disk for Fate/Apocrypha
+2022-06-19 03:52:38.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:38.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:38.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:38.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:38.6|Info|RefreshSeriesService|Skipping refresh of series: Fate/Extra: Last Encore
+2022-06-19 03:52:38.6|Info|DiskScanService|Scanning Fate/Extra: Last Encore
+2022-06-19 03:52:38.6|Info|DiskScanService|Completed scanning disk for Fate/Extra: Last Encore
+2022-06-19 03:52:38.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:38.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:38.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:38.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:38.7|Info|RefreshSeriesService|Skipping refresh of series: Fate/Grand Order - Absolute Demonic Front: Babylonia
+2022-06-19 03:52:38.7|Info|DiskScanService|Scanning Fate/Grand Order - Absolute Demonic Front: Babylonia
+2022-06-19 03:52:38.8|Info|DiskScanService|Completed scanning disk for Fate/Grand Order - Absolute Demonic Front: Babylonia
+2022-06-19 03:52:38.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:38.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:38.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:38.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:38.9|Info|RefreshSeriesService|Skipping refresh of series: Fate/kaleid liner Prisma Illya
+2022-06-19 03:52:38.9|Info|DiskScanService|Scanning Fate/kaleid liner Prisma Illya
+2022-06-19 03:52:39.0|Info|DiskScanService|Completed scanning disk for Fate/kaleid liner Prisma Illya
+2022-06-19 03:52:39.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:39.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:39.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:39.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:39.2|Info|RefreshSeriesService|Skipping refresh of series: Fate/Stay Night
+2022-06-19 03:52:39.2|Info|DiskScanService|Scanning Fate/Stay Night
+2022-06-19 03:52:39.2|Info|DiskScanService|Completed scanning disk for Fate/Stay Night
+2022-06-19 03:52:39.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:39.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:39.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:39.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:39.3|Info|RefreshSeriesService|Skipping refresh of series: Fate/Stay Night: Unlimited Blade Works
+2022-06-19 03:52:39.3|Info|DiskScanService|Scanning Fate/Stay Night: Unlimited Blade Works
+2022-06-19 03:52:39.4|Info|DiskScanService|Completed scanning disk for Fate/Stay Night: Unlimited Blade Works
+2022-06-19 03:52:39.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:39.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:39.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:39.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:39.5|Info|RefreshSeriesService|Skipping refresh of series: Fate/Zero
+2022-06-19 03:52:39.5|Info|DiskScanService|Scanning Fate/Zero
+2022-06-19 03:52:39.5|Info|DiskScanService|Completed scanning disk for Fate/Zero
+2022-06-19 03:52:39.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:39.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:39.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:39.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:39.7|Info|RefreshSeriesService|Skipping refresh of series: Final Space
+2022-06-19 03:52:39.7|Info|DiskScanService|Scanning Final Space
+2022-06-19 03:52:39.8|Info|DiskScanService|Completed scanning disk for Final Space
+2022-06-19 03:52:39.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:39.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:39.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:39.8|Info|ExistingExtraFileService|Found 5 possible extra files, imported 5 files.
+2022-06-19 03:52:39.9|Info|RefreshSeriesService|Skipping refresh of series: Firefly
+2022-06-19 03:52:39.9|Info|DiskScanService|Scanning Firefly
+2022-06-19 03:52:39.9|Info|DiskScanService|Completed scanning disk for Firefly
+2022-06-19 03:52:39.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:40.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:40.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:40.0|Info|ExistingExtraFileService|Found 14 possible extra files, imported 14 files.
+2022-06-19 03:52:40.0|Info|RefreshSeriesService|Updating The Flight Attendant
+2022-06-19 03:52:40.3|Info|RefreshEpisodeService|Starting episode info refresh for: [366625][The Flight Attendant]
+2022-06-19 03:52:40.3|Info|RefreshEpisodeService|Finished episode refresh for series: [366625][The Flight Attendant].
+2022-06-19 03:52:40.4|Info|DiskScanService|Scanning The Flight Attendant
+2022-06-19 03:52:40.4|Info|DiskScanService|Completed scanning disk for The Flight Attendant
+2022-06-19 03:52:40.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:40.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:40.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:40.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:40.5|Info|RefreshSeriesService|Skipping refresh of series: Fullmetal Alchemist: Brotherhood
+2022-06-19 03:52:40.5|Info|DiskScanService|Scanning Fullmetal Alchemist: Brotherhood
+2022-06-19 03:52:40.7|Info|DiskScanService|Completed scanning disk for Fullmetal Alchemist: Brotherhood
+2022-06-19 03:52:40.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:40.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:40.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:40.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:40.8|Info|RefreshSeriesService|Skipping refresh of series: Futurama
+2022-06-19 03:52:40.8|Info|DiskScanService|Scanning Futurama
+2022-06-19 03:52:41.1|Info|DiskScanService|Completed scanning disk for Futurama
+2022-06-19 03:52:41.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:41.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:41.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:41.2|Info|ExistingExtraFileService|Found 46 possible extra files, imported 46 files.
+2022-06-19 03:52:41.3|Info|RefreshSeriesService|Skipping refresh of series: The Future Diary
+2022-06-19 03:52:41.3|Info|DiskScanService|Scanning The Future Diary
+2022-06-19 03:52:41.4|Info|DiskScanService|Completed scanning disk for The Future Diary
+2022-06-19 03:52:41.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:41.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:41.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:41.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:41.5|Info|RefreshSeriesService|Skipping refresh of series: Game of Thrones
+2022-06-19 03:52:41.5|Info|DiskScanService|Scanning Game of Thrones
+2022-06-19 03:52:41.8|Info|DiskScanService|Completed scanning disk for Game of Thrones
+2022-06-19 03:52:41.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:41.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:41.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:41.9|Info|ExistingExtraFileService|Found 56 possible extra files, imported 56 files.
+2022-06-19 03:52:42.0|Info|RefreshSeriesService|Skipping refresh of series: Ghost Stories
+2022-06-19 03:52:42.0|Info|DiskScanService|Scanning Ghost Stories
+2022-06-19 03:52:42.0|Info|DiskScanService|Completed scanning disk for Ghost Stories
+2022-06-19 03:52:42.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:42.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:42.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:42.1|Info|ExistingExtraFileService|Found 12 possible extra files, imported 11 files.
+2022-06-19 03:52:42.2|Info|RefreshSeriesService|Skipping refresh of series: Girlfriend, Girlfriend
+2022-06-19 03:52:42.2|Info|DiskScanService|Scanning Girlfriend, Girlfriend
+2022-06-19 03:52:42.3|Info|DiskScanService|Completed scanning disk for Girlfriend, Girlfriend
+2022-06-19 03:52:42.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:42.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:42.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:42.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:42.3|Info|RefreshSeriesService|Skipping refresh of series: The God of High School
+2022-06-19 03:52:42.3|Info|DiskScanService|Scanning The God of High School
+2022-06-19 03:52:42.4|Info|DiskScanService|Completed scanning disk for The God of High School
+2022-06-19 03:52:42.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:42.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:42.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:42.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:42.5|Info|RefreshSeriesService|Skipping refresh of series: Golden Time
+2022-06-19 03:52:42.5|Info|DiskScanService|Scanning Golden Time
+2022-06-19 03:52:42.6|Info|DiskScanService|Completed scanning disk for Golden Time
+2022-06-19 03:52:42.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:42.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:42.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:42.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:42.7|Info|RefreshSeriesService|Updating The Good Doctor
+2022-06-19 03:52:43.0|Info|RefreshEpisodeService|Starting episode info refresh for: [328634][The Good Doctor]
+2022-06-19 03:52:43.2|Info|RefreshEpisodeService|Finished episode refresh for series: [328634][The Good Doctor].
+2022-06-19 03:52:43.2|Info|DiskScanService|Scanning The Good Doctor
+2022-06-19 03:52:43.4|Info|DiskScanService|Completed scanning disk for The Good Doctor
+2022-06-19 03:52:43.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:43.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:43.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:43.5|Info|ExistingExtraFileService|Found 9 possible extra files, imported 9 files.
+2022-06-19 03:52:43.6|Info|RefreshSeriesService|Updating The Great
+2022-06-19 03:52:43.9|Info|RefreshEpisodeService|Starting episode info refresh for: [369301][The Great]
+2022-06-19 03:52:43.9|Info|RefreshEpisodeService|Finished episode refresh for series: [369301][The Great].
+2022-06-19 03:52:44.0|Info|DiskScanService|Scanning The Great
+2022-06-19 03:52:44.0|Info|DiskScanService|Completed scanning disk for The Great
+2022-06-19 03:52:44.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:44.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:44.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:44.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:44.1|Info|RefreshSeriesService|Skipping refresh of series: Grimgar of Fantasy and Ash
+2022-06-19 03:52:44.1|Info|DiskScanService|Scanning Grimgar of Fantasy and Ash
+2022-06-19 03:52:44.2|Info|DiskScanService|Completed scanning disk for Grimgar of Fantasy and Ash
+2022-06-19 03:52:44.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:44.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:44.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:44.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:44.3|Info|RefreshSeriesService|Updating Halo
+2022-06-19 03:52:44.6|Info|RefreshEpisodeService|Starting episode info refresh for: [366524][Halo]
+2022-06-19 03:52:44.6|Info|RefreshEpisodeService|Finished episode refresh for series: [366524][Halo].
+2022-06-19 03:52:44.7|Info|DiskScanService|Scanning Halo
+2022-06-19 03:52:44.7|Info|DiskScanService|Completed scanning disk for Halo
+2022-06-19 03:52:44.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:44.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:44.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:44.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:44.8|Info|RefreshSeriesService|Updating Harley Quinn
+2022-06-19 03:52:45.1|Info|RefreshEpisodeService|Starting episode info refresh for: [365677][Harley Quinn]
+2022-06-19 03:52:45.2|Info|RefreshEpisodeService|Finished episode refresh for series: [365677][Harley Quinn].
+2022-06-19 03:52:45.2|Info|DiskScanService|Scanning Harley Quinn
+2022-06-19 03:52:45.3|Info|DiskScanService|Completed scanning disk for Harley Quinn
+2022-06-19 03:52:45.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:45.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:45.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:45.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:45.4|Info|RefreshSeriesService|Skipping refresh of series: Haven't You Heard? I'm Sakamoto
+2022-06-19 03:52:45.4|Info|DiskScanService|Scanning Haven't You Heard? I'm Sakamoto
+2022-06-19 03:52:45.4|Info|DiskScanService|Completed scanning disk for Haven't You Heard? I'm Sakamoto
+2022-06-19 03:52:45.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:45.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:45.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:45.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:45.5|Info|RefreshSeriesService|Skipping refresh of series: Hawkeye (2021)
+2022-06-19 03:52:45.5|Info|DiskScanService|Scanning Hawkeye (2021)
+2022-06-19 03:52:45.5|Info|DiskScanService|Completed scanning disk for Hawkeye (2021)
+2022-06-19 03:52:45.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:45.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:45.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:45.6|Info|ExistingExtraFileService|Found 1 possible extra files, imported 1 files.
+2022-06-19 03:52:45.6|Info|RefreshSeriesService|Skipping refresh of series: High School of the Dead
+2022-06-19 03:52:45.6|Info|DiskScanService|Scanning High School of the Dead
+2022-06-19 03:52:45.7|Info|DiskScanService|Completed scanning disk for High School of the Dead
+2022-06-19 03:52:45.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:45.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:45.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:45.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:45.8|Info|RefreshSeriesService|Updating High-Rise Invasion
+2022-06-19 03:52:46.0|Info|RefreshEpisodeService|Starting episode info refresh for: [391006][High-Rise Invasion]
+2022-06-19 03:52:46.0|Info|RefreshEpisodeService|Finished episode refresh for series: [391006][High-Rise Invasion].
+2022-06-19 03:52:46.0|Info|DiskScanService|Scanning High-Rise Invasion
+2022-06-19 03:52:46.1|Info|DiskScanService|Completed scanning disk for High-Rise Invasion
+2022-06-19 03:52:46.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:46.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:46.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:46.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:46.2|Info|RefreshSeriesService|Skipping refresh of series: House
+2022-06-19 03:52:46.2|Info|DiskScanService|Scanning House
+2022-06-19 03:52:46.6|Info|DiskScanService|Completed scanning disk for House
+2022-06-19 03:52:46.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:46.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:46.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:46.7|Info|ExistingExtraFileService|Found 17 possible extra files, imported 17 files.
+2022-06-19 03:52:46.8|Info|RefreshSeriesService|Updating How I Met Your Father
+2022-06-19 03:52:47.1|Info|RefreshEpisodeService|Starting episode info refresh for: [401513][How I Met Your Father]
+2022-06-19 03:52:47.1|Info|RefreshEpisodeService|Finished episode refresh for series: [401513][How I Met Your Father].
+2022-06-19 03:52:47.2|Info|DiskScanService|Scanning How I Met Your Father
+2022-06-19 03:52:47.2|Info|DiskScanService|Completed scanning disk for How I Met Your Father
+2022-06-19 03:52:47.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:47.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:47.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:47.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:47.4|Info|RefreshSeriesService|Skipping refresh of series: How I Met Your Mother
+2022-06-19 03:52:47.4|Info|DiskScanService|Scanning How I Met Your Mother
+2022-06-19 03:52:47.7|Info|DiskScanService|Completed scanning disk for How I Met Your Mother
+2022-06-19 03:52:47.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:47.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:47.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:47.8|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:52:47.9|Info|RefreshSeriesService|Skipping refresh of series: Hunter x Hunter (2011)
+2022-06-19 03:52:47.9|Info|DiskScanService|Scanning Hunter x Hunter (2011)
+2022-06-19 03:52:48.3|Info|DiskScanService|Completed scanning disk for Hunter x Hunter (2011)
+2022-06-19 03:52:48.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:48.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:48.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:48.4|Info|ExistingExtraFileService|Found 57 possible extra files, imported 57 files.
+2022-06-19 03:52:48.6|Info|RefreshSeriesService|Skipping refresh of series: I Can't Understand What My Husband Is Saying
+2022-06-19 03:52:48.6|Info|DiskScanService|Scanning I Can't Understand What My Husband Is Saying
+2022-06-19 03:52:48.6|Info|DiskScanService|Completed scanning disk for I Can't Understand What My Husband Is Saying
+2022-06-19 03:52:48.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:48.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:48.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:48.7|Info|ExistingExtraFileService|Found 26 possible extra files, imported 26 files.
+2022-06-19 03:52:48.8|Info|RefreshSeriesService|Skipping refresh of series: iCarly
+2022-06-19 03:52:48.8|Info|DiskScanService|Scanning iCarly
+2022-06-19 03:52:49.0|Info|DiskScanService|Completed scanning disk for iCarly
+2022-06-19 03:52:49.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:49.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:49.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:49.0|Info|ExistingExtraFileService|Found 9 possible extra files, imported 9 files.
+2022-06-19 03:52:49.1|Info|RefreshSeriesService|Updating iCarly (2021)
+2022-06-19 03:52:49.5|Info|RefreshEpisodeService|Starting episode info refresh for: [397597][iCarly (2021)]
+2022-06-19 03:52:49.5|Info|RefreshEpisodeService|Finished episode refresh for series: [397597][iCarly (2021)].
+2022-06-19 03:52:49.6|Info|DiskScanService|Scanning iCarly (2021)
+2022-06-19 03:52:49.6|Info|DiskScanService|Completed scanning disk for iCarly (2021)
+2022-06-19 03:52:49.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:49.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:49.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:49.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:49.7|Info|RefreshSeriesService|Skipping refresh of series: In Search of the Lost Future
+2022-06-19 03:52:49.7|Info|DiskScanService|Scanning In Search of the Lost Future
+2022-06-19 03:52:49.8|Info|DiskScanService|Completed scanning disk for In Search of the Lost Future
+2022-06-19 03:52:49.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:49.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:49.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:49.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:49.9|Info|RefreshSeriesService|Updating Ink Master
+2022-06-19 03:52:50.1|Info|RefreshEpisodeService|Starting episode info refresh for: [254986][Ink Master]
+2022-06-19 03:52:50.4|Info|RefreshEpisodeService|Finished episode refresh for series: [254986][Ink Master].
+2022-06-19 03:52:50.4|Info|DiskScanService|Scanning Ink Master
+2022-06-19 03:52:50.9|Info|DiskScanService|Completed scanning disk for Ink Master
+2022-06-19 03:52:51.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:51.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:51.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:51.0|Info|ExistingExtraFileService|Found 31 possible extra files, imported 31 files.
+2022-06-19 03:52:51.2|Info|RefreshSeriesService|Updating In/Spectre
+2022-06-19 03:52:51.6|Info|RefreshEpisodeService|Starting episode info refresh for: [368565][In/Spectre]
+2022-06-19 03:52:51.6|Info|RefreshEpisodeService|Finished episode refresh for series: [368565][In/Spectre].
+2022-06-19 03:52:52.3|Info|DiskScanService|Scanning In/Spectre
+2022-06-19 03:52:52.3|Info|DiskScanService|Completed scanning disk for In/Spectre
+2022-06-19 03:52:52.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:52.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:52.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:52.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:52.4|Info|RefreshSeriesService|Updating The Irregular at Magic High School
+2022-06-19 03:52:52.8|Info|RefreshEpisodeService|Starting episode info refresh for: [278329][The Irregular at Magic High School]
+2022-06-19 03:52:52.8|Info|RefreshEpisodeService|Finished episode refresh for series: [278329][The Irregular at Magic High School].
+2022-06-19 03:52:53.2|Info|DiskScanService|Scanning The Irregular at Magic High School
+2022-06-19 03:52:53.4|Info|DiskScanService|Completed scanning disk for The Irregular at Magic High School
+2022-06-19 03:52:53.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:53.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:53.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:53.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:53.6|Info|RefreshSeriesService|Skipping refresh of series: Is This A Zombie?
+2022-06-19 03:52:53.6|Info|DiskScanService|Scanning Is This A Zombie?
+2022-06-19 03:52:53.6|Info|DiskScanService|Completed scanning disk for Is This A Zombie?
+2022-06-19 03:52:53.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:53.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:53.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:53.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:53.7|Info|RefreshSeriesService|Updating I've Been Killing Slimes for 300 Years and Maxed Out My Level
+2022-06-19 03:52:54.0|Info|RefreshEpisodeService|Starting episode info refresh for: [389377][I've Been Killing Slimes for 300 Years and Maxed Out My Level]
+2022-06-19 03:52:54.1|Info|RefreshEpisodeService|Finished episode refresh for series: [389377][I've Been Killing Slimes for 300 Years and Maxed Out My Level].
+2022-06-19 03:52:54.6|Info|DiskScanService|Scanning I've Been Killing Slimes for 300 Years and Maxed Out My Level
+2022-06-19 03:52:54.6|Info|DiskScanService|Completed scanning disk for I've Been Killing Slimes for 300 Years and Maxed Out My Level
+2022-06-19 03:52:54.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:54.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:54.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:54.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:54.7|Info|RefreshSeriesService|Skipping refresh of series: James Acaster: Repertoire
+2022-06-19 03:52:54.7|Info|DiskScanService|Scanning James Acaster: Repertoire
+2022-06-19 03:52:54.7|Info|DiskScanService|Completed scanning disk for James Acaster: Repertoire
+2022-06-19 03:52:54.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:54.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:54.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:54.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:54.8|Info|RefreshSeriesService|Updating Jujutsu Kaisen
+2022-06-19 03:52:55.1|Info|RefreshEpisodeService|Starting episode info refresh for: [377543][Jujutsu Kaisen]
+2022-06-19 03:52:55.2|Info|RefreshEpisodeService|Finished episode refresh for series: [377543][Jujutsu Kaisen].
+2022-06-19 03:52:55.8|Info|DiskScanService|Scanning Jujutsu Kaisen
+2022-06-19 03:52:55.8|Info|DiskScanService|Completed scanning disk for Jujutsu Kaisen
+2022-06-19 03:52:55.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:52:55.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:52:55.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:52:55.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:52:55.9|Info|RefreshSeriesService|Updating Kaguya-sama: Love Is War
+2022-06-19 03:52:56.2|Info|RefreshEpisodeService|Starting episode info refresh for: [354198][Kaguya-sama: Love Is War]
+2022-06-19 03:52:56.2|Info|RefreshEpisodeService|Finished episode refresh for series: [354198][Kaguya-sama: Love Is War].
+2022-06-19 03:53:09.5|Info|DiskScanService|Scanning Kaguya-sama: Love Is War
+2022-06-19 03:53:09.6|Info|DiskScanService|Completed scanning disk for Kaguya-sama: Love Is War
+2022-06-19 03:53:09.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:09.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:09.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:09.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:09.7|Info|RefreshSeriesService|Skipping refresh of series: Kaze no Stigma
+2022-06-19 03:53:09.7|Info|DiskScanService|Scanning Kaze no Stigma
+2022-06-19 03:53:09.7|Info|DiskScanService|Completed scanning disk for Kaze no Stigma
+2022-06-19 03:53:09.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:09.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:09.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:09.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:09.8|Info|RefreshSeriesService|Skipping refresh of series: KONOSUBA - God's blessing on this wonderful world!
+2022-06-19 03:53:09.8|Info|DiskScanService|Scanning KONOSUBA - God's blessing on this wonderful world!
+2022-06-19 03:53:09.9|Info|DiskScanService|Completed scanning disk for KONOSUBA - God's blessing on this wonderful world!
+2022-06-19 03:53:10.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:10.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:10.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:10.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:10.1|Info|RefreshSeriesService|Skipping refresh of series: Kung Fu: The Legend Continues
+2022-06-19 03:53:10.1|Info|DiskScanService|Scanning Kung Fu: The Legend Continues
+2022-06-19 03:53:10.3|Info|DiskScanService|Completed scanning disk for Kung Fu: The Legend Continues
+2022-06-19 03:53:10.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:10.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:10.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:10.5|Info|ExistingExtraFileService|Found 3 possible extra files, imported 0 files.
+2022-06-19 03:53:10.5|Info|RefreshSeriesService|Skipping refresh of series: Kyle XY
+2022-06-19 03:53:10.5|Info|DiskScanService|Scanning Kyle XY
+2022-06-19 03:53:10.6|Info|DiskScanService|Completed scanning disk for Kyle XY
+2022-06-19 03:53:10.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:10.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:10.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:10.7|Info|ExistingExtraFileService|Found 10 possible extra files, imported 10 files.
+2022-06-19 03:53:10.8|Info|RefreshSeriesService|Skipping refresh of series: The Legend of Korra
+2022-06-19 03:53:10.8|Info|DiskScanService|Scanning The Legend of Korra
+2022-06-19 03:53:10.9|Info|DiskScanService|Completed scanning disk for The Legend of Korra
+2022-06-19 03:53:11.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:11.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:11.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:11.0|Info|ExistingExtraFileService|Found 7 possible extra files, imported 7 files.
+2022-06-19 03:53:11.1|Info|RefreshSeriesService|Skipping refresh of series: Legit (2013)
+2022-06-19 03:53:11.1|Info|DiskScanService|Scanning Legit (2013)
+2022-06-19 03:53:11.1|Info|DiskScanService|Completed scanning disk for Legit (2013)
+2022-06-19 03:53:11.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:11.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:11.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:11.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:11.2|Info|RefreshSeriesService|Updating Letterkenny
+2022-06-19 03:53:11.5|Info|RefreshEpisodeService|Starting episode info refresh for: [302938][Letterkenny]
+2022-06-19 03:53:11.6|Info|RefreshEpisodeService|Finished episode refresh for series: [302938][Letterkenny].
+2022-06-19 03:53:11.6|Info|DiskScanService|Scanning Letterkenny
+2022-06-19 03:53:11.7|Info|DiskScanService|Completed scanning disk for Letterkenny
+2022-06-19 03:53:11.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:11.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:11.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:11.8|Info|ExistingExtraFileService|Found 5 possible extra files, imported 5 files.
+2022-06-19 03:53:11.9|Info|RefreshSeriesService|Skipping refresh of series: Limitless
+2022-06-19 03:53:11.9|Info|DiskScanService|Scanning Limitless
+2022-06-19 03:53:11.9|Info|DiskScanService|Completed scanning disk for Limitless
+2022-06-19 03:53:11.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:12.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:12.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:12.0|Info|ExistingExtraFileService|Found 16 possible extra files, imported 16 files.
+2022-06-19 03:53:12.1|Info|RefreshSeriesService|Skipping refresh of series: Log Horizon
+2022-06-19 03:53:12.1|Info|DiskScanService|Scanning Log Horizon
+2022-06-19 03:53:12.2|Info|DiskScanService|Completed scanning disk for Log Horizon
+2022-06-19 03:53:12.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:12.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:12.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:12.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:12.3|Info|RefreshSeriesService|Updating Loki
+2022-06-19 03:53:12.6|Info|RefreshEpisodeService|Starting episode info refresh for: [362472][Loki]
+2022-06-19 03:53:12.7|Info|RefreshEpisodeService|Finished episode refresh for series: [362472][Loki].
+2022-06-19 03:53:12.7|Info|DiskScanService|Scanning Loki
+2022-06-19 03:53:12.7|Info|DiskScanService|Completed scanning disk for Loki
+2022-06-19 03:53:12.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:12.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:12.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:12.8|Info|ExistingExtraFileService|Found 5 possible extra files, imported 5 files.
+2022-06-19 03:53:12.8|Info|RefreshSeriesService|Skipping refresh of series: Lucifer
+2022-06-19 03:53:12.8|Info|DiskScanService|Scanning Lucifer
+2022-06-19 03:53:13.0|Info|DiskScanService|Completed scanning disk for Lucifer
+2022-06-19 03:53:13.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:13.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:13.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:13.1|Info|ExistingExtraFileService|Found 6 possible extra files, imported 6 files.
+2022-06-19 03:53:13.2|Info|RefreshSeriesService|Updating The Mandalorian
+2022-06-19 03:53:13.5|Info|RefreshEpisodeService|Starting episode info refresh for: [361753][The Mandalorian]
+2022-06-19 03:53:13.5|Info|RefreshEpisodeService|Finished episode refresh for series: [361753][The Mandalorian].
+2022-06-19 03:53:13.5|Info|DiskScanService|Scanning The Mandalorian
+2022-06-19 03:53:13.6|Info|DiskScanService|Completed scanning disk for The Mandalorian
+2022-06-19 03:53:13.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:13.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:13.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:13.6|Info|ExistingExtraFileService|Found 10 possible extra files, imported 10 files.
+2022-06-19 03:53:13.7|Info|RefreshSeriesService|Skipping refresh of series: Maoyu: Archenemy & Hero
+2022-06-19 03:53:13.7|Info|DiskScanService|Scanning Maoyu: Archenemy & Hero
+2022-06-19 03:53:13.8|Info|DiskScanService|Completed scanning disk for Maoyu: Archenemy & Hero
+2022-06-19 03:53:13.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:13.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:13.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:13.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:13.8|Info|RefreshSeriesService|Skipping refresh of series: Maria the Virgin Witch
+2022-06-19 03:53:13.8|Info|DiskScanService|Scanning Maria the Virgin Witch
+2022-06-19 03:53:13.9|Info|DiskScanService|Completed scanning disk for Maria the Virgin Witch
+2022-06-19 03:53:13.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:13.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:13.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:13.9|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:13.9|Info|RefreshSeriesService|Skipping refresh of series: Marvel's M.O.D.O.K.
+2022-06-19 03:53:13.9|Info|DiskScanService|Scanning Marvel's M.O.D.O.K.
+2022-06-19 03:53:14.0|Info|DiskScanService|Completed scanning disk for Marvel's M.O.D.O.K.
+2022-06-19 03:53:14.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:14.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:14.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:14.0|Info|ExistingExtraFileService|Found 1 possible extra files, imported 1 files.
+2022-06-19 03:53:14.0|Info|RefreshSeriesService|Skipping refresh of series: Monthly Girls' Nozaki-kun
+2022-06-19 03:53:14.1|Info|DiskScanService|Scanning Monthly Girls' Nozaki-kun
+2022-06-19 03:53:14.1|Info|DiskScanService|Completed scanning disk for Monthly Girls' Nozaki-kun
+2022-06-19 03:53:14.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:14.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:14.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:14.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:14.2|Info|RefreshSeriesService|Updating Moon Knight
+2022-06-19 03:53:14.5|Info|RefreshEpisodeService|Starting episode info refresh for: [368611][Moon Knight]
+2022-06-19 03:53:14.5|Info|RefreshEpisodeService|Finished episode refresh for series: [368611][Moon Knight].
+2022-06-19 03:53:14.5|Info|DiskScanService|Scanning Moon Knight
+2022-06-19 03:53:14.6|Info|DiskScanService|Completed scanning disk for Moon Knight
+2022-06-19 03:53:14.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:14.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:14.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:14.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:14.6|Info|RefreshSeriesService|Updating Mushoku Tensei: Jobless Reincarnation
+2022-06-19 03:53:14.9|Info|RefreshEpisodeService|Starting episode info refresh for: [371310][Mushoku Tensei: Jobless Reincarnation]
+2022-06-19 03:53:14.9|Info|RefreshEpisodeService|Finished episode refresh for series: [371310][Mushoku Tensei: Jobless Reincarnation].
+2022-06-19 03:53:15.4|Info|DiskScanService|Scanning Mushoku Tensei: Jobless Reincarnation
+2022-06-19 03:53:15.4|Info|DiskScanService|Completed scanning disk for Mushoku Tensei: Jobless Reincarnation
+2022-06-19 03:53:15.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:15.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:15.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:15.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:15.5|Info|RefreshSeriesService|Skipping refresh of series: My Dress-Up Darling
+2022-06-19 03:53:15.5|Info|DiskScanService|Scanning My Dress-Up Darling
+2022-06-19 03:53:15.6|Info|DiskScanService|Completed scanning disk for My Dress-Up Darling
+2022-06-19 03:53:15.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:15.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:15.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:15.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:15.6|Info|RefreshSeriesService|Updating My Hero Academia
+2022-06-19 03:53:15.9|Info|RefreshEpisodeService|Starting episode info refresh for: [305074][My Hero Academia]
+2022-06-19 03:53:16.1|Info|RefreshEpisodeService|Finished episode refresh for series: [305074][My Hero Academia].
+2022-06-19 03:53:16.6|Info|DiskScanService|Scanning My Hero Academia
+2022-06-19 03:53:16.9|Info|DiskScanService|Completed scanning disk for My Hero Academia
+2022-06-19 03:53:16.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:17.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:17.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:17.0|Info|ExistingExtraFileService|Found 37 possible extra files, imported 37 files.
+2022-06-19 03:53:17.1|Info|RefreshSeriesService|Skipping refresh of series: My Little Monster
+2022-06-19 03:53:17.1|Info|DiskScanService|Scanning My Little Monster
+2022-06-19 03:53:17.1|Info|DiskScanService|Completed scanning disk for My Little Monster
+2022-06-19 03:53:17.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:17.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:17.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:17.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:17.2|Info|RefreshSeriesService|Skipping refresh of series: My Next Life as a Villainess: All Routes Lead to Doom!
+2022-06-19 03:53:17.2|Info|DiskScanService|Scanning My Next Life as a Villainess: All Routes Lead to Doom!
+2022-06-19 03:53:17.3|Info|DiskScanService|Completed scanning disk for My Next Life as a Villainess: All Routes Lead to Doom!
+2022-06-19 03:53:17.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:17.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:17.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:17.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:17.4|Info|RefreshSeriesService|Skipping refresh of series: My Teen Romantic Comedy SNAFU
+2022-06-19 03:53:17.4|Info|DiskScanService|Scanning My Teen Romantic Comedy SNAFU
+2022-06-19 03:53:17.5|Info|DiskScanService|Completed scanning disk for My Teen Romantic Comedy SNAFU
+2022-06-19 03:53:17.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:17.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:17.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:17.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:17.6|Info|RefreshSeriesService|Updating Mythic Quest
+2022-06-19 03:53:17.8|Info|RefreshEpisodeService|Starting episode info refresh for: [362829][Mythic Quest]
+2022-06-19 03:53:17.8|Info|RefreshEpisodeService|Finished episode refresh for series: [362829][Mythic Quest].
+2022-06-19 03:53:17.9|Info|DiskScanService|Scanning Mythic Quest
+2022-06-19 03:53:17.9|Info|DiskScanService|Completed scanning disk for Mythic Quest
+2022-06-19 03:53:17.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:18.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:18.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:18.0|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:53:18.0|Info|RefreshSeriesService|Skipping refresh of series: Noragami
+2022-06-19 03:53:18.0|Info|DiskScanService|Scanning Noragami
+2022-06-19 03:53:18.1|Info|DiskScanService|Completed scanning disk for Noragami
+2022-06-19 03:53:18.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:18.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:18.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:18.1|Info|ExistingExtraFileService|Found 1 possible extra files, imported 1 files.
+2022-06-19 03:53:18.2|Info|RefreshSeriesService|Skipping refresh of series: Numb3rs
+2022-06-19 03:53:18.2|Info|DiskScanService|Scanning Numb3rs
+2022-06-19 03:53:18.5|Info|DiskScanService|Completed scanning disk for Numb3rs
+2022-06-19 03:53:18.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:18.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:18.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:18.7|Info|ExistingExtraFileService|Found 118 possible extra files, imported 118 files.
+2022-06-19 03:53:18.9|Info|RefreshSeriesService|Skipping refresh of series: The Office (US)
+2022-06-19 03:53:18.9|Info|DiskScanService|Scanning The Office (US)
+2022-06-19 03:53:19.2|Info|DiskScanService|Completed scanning disk for The Office (US)
+2022-06-19 03:53:19.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:19.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:19.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:19.3|Info|ExistingExtraFileService|Found 3 possible extra files, imported 3 files.
+2022-06-19 03:53:19.5|Info|RefreshSeriesService|Updating One-Punch Man
+2022-06-19 03:53:19.6|Info|RefreshEpisodeService|Starting episode info refresh for: [293088][One-Punch Man]
+2022-06-19 03:53:19.7|Info|RefreshEpisodeService|Finished episode refresh for series: [293088][One-Punch Man].
+2022-06-19 03:53:20.0|Info|DiskScanService|Scanning One-Punch Man
+2022-06-19 03:53:20.0|Info|DiskScanService|Completed scanning disk for One-Punch Man
+2022-06-19 03:53:20.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:20.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:20.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:20.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:20.1|Info|RefreshSeriesService|Updating Only Murders in the Building
+2022-06-19 03:53:20.4|Info|RefreshEpisodeService|Starting episode info refresh for: [399959][Only Murders in the Building]
+2022-06-19 03:53:20.4|Info|RefreshEpisodeService|Finished episode refresh for series: [399959][Only Murders in the Building].
+2022-06-19 03:53:20.5|Info|DiskScanService|Scanning Only Murders in the Building
+2022-06-19 03:53:20.5|Info|DiskScanService|Completed scanning disk for Only Murders in the Building
+2022-06-19 03:53:20.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:20.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:20.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:20.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:20.6|Info|RefreshSeriesService|Updating The Orville
+2022-06-19 03:53:21.0|Info|RefreshEpisodeService|Starting episode info refresh for: [328487][The Orville]
+2022-06-19 03:53:21.0|Info|RefreshEpisodeService|Finished episode refresh for series: [328487][The Orville].
+2022-06-19 03:53:21.1|Info|DiskScanService|Scanning The Orville
+2022-06-19 03:53:21.1|Info|DiskScanService|Completed scanning disk for The Orville
+2022-06-19 03:53:21.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:21.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:21.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:21.2|Info|ExistingExtraFileService|Found 15 possible extra files, imported 15 files.
+2022-06-19 03:53:21.3|Info|RefreshSeriesService|Updating Our Flag Means Death
+2022-06-19 03:53:21.6|Info|RefreshEpisodeService|Starting episode info refresh for: [390093][Our Flag Means Death]
+2022-06-19 03:53:21.7|Info|RefreshEpisodeService|Finished episode refresh for series: [390093][Our Flag Means Death].
+2022-06-19 03:53:21.7|Info|DiskScanService|Scanning Our Flag Means Death
+2022-06-19 03:53:21.7|Info|DiskScanService|Completed scanning disk for Our Flag Means Death
+2022-06-19 03:53:21.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:21.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:21.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:21.8|Info|ExistingExtraFileService|Found 10 possible extra files, imported 10 files.
+2022-06-19 03:53:21.8|Info|RefreshSeriesService|Updating Outlander
+2022-06-19 03:53:22.2|Info|RefreshEpisodeService|Starting episode info refresh for: [270408][Outlander]
+2022-06-19 03:53:22.4|Info|RefreshEpisodeService|Finished episode refresh for series: [270408][Outlander].
+2022-06-19 03:53:22.5|Info|DiskScanService|Scanning Outlander
+2022-06-19 03:53:22.9|Info|DiskScanService|Completed scanning disk for Outlander
+2022-06-19 03:53:23.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:23.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:23.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:23.1|Info|ExistingExtraFileService|Found 66 possible extra files, imported 66 files.
+2022-06-19 03:53:23.2|Info|RefreshSeriesService|Skipping refresh of series: The Pacific
+2022-06-19 03:53:23.2|Info|DiskScanService|Scanning The Pacific
+2022-06-19 03:53:23.3|Info|DiskScanService|Completed scanning disk for The Pacific
+2022-06-19 03:53:23.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:23.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:23.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:23.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:23.4|Info|RefreshSeriesService|Skipping refresh of series: Parks and Recreation
+2022-06-19 03:53:23.4|Info|DiskScanService|Scanning Parks and Recreation
+2022-06-19 03:53:23.6|Error|RefreshSeriesService|Couldn't rescan series [84912][Parks and Recreation]
+
+[v3.0.8.1507] System.IO.FileNotFoundException: File doesn't exist: /tv/plex/tvshows/Parks and Recreation/Season 6/Parks and Recreation (2009) - S06E04 - Doppelg�ngers (1080p BluRay x265 Silence).mkv
+  at NzbDrone.Common.Disk.DiskProviderBase.GetFileSize (System.String path) [0x00077] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Common\Disk\DiskProviderBase.cs:184 
+  at NzbDrone.Core.MediaFiles.EpisodeImport.ImportDecisionMaker.GetDecision (NzbDrone.Core.Parser.Model.LocalEpisode localEpisode, NzbDrone.Core.Download.DownloadClientItem downloadClientItem, System.Boolean otherFiles) [0x00015] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\MediaFiles\EpisodeImport\ImportDecisionMaker.cs:116 
+  at NzbDrone.Core.MediaFiles.EpisodeImport.ImportDecisionMaker.GetImportDecisions (System.Collections.Generic.List`1[T] videoFiles, NzbDrone.Core.Tv.Series series, NzbDrone.Core.Download.DownloadClientItem downloadClientItem, NzbDrone.Core.Parser.Model.ParsedEpisodeInfo folderInfo, System.Boolean sceneSource, System.Boolean filterExistingFiles) [0x000c7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\MediaFiles\EpisodeImport\ImportDecisionMaker.cs:95 
+  at NzbDrone.Core.MediaFiles.EpisodeImport.ImportDecisionMaker.GetImportDecisions (System.Collections.Generic.List`1[T] videoFiles, NzbDrone.Core.Tv.Series series, System.Boolean filterExistingFiles) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\MediaFiles\EpisodeImport\ImportDecisionMaker.cs:55 
+  at NzbDrone.Core.MediaFiles.DiskScanService.Scan (NzbDrone.Core.Tv.Series series) [0x001b1] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\MediaFiles\DiskScanService.cs:140 
+  at NzbDrone.Core.Tv.RefreshSeriesService.RescanSeries (NzbDrone.Core.Tv.Series series, System.Boolean isNew, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Tv\RefreshSeriesService.cs:186 
+
+2022-06-19 03:53:23.7|Info|RefreshSeriesService|Skipping refresh of series: The Penguins of Madagascar
+2022-06-19 03:53:23.7|Info|DiskScanService|Scanning The Penguins of Madagascar
+2022-06-19 03:53:23.9|Info|DiskScanService|Completed scanning disk for The Penguins of Madagascar
+2022-06-19 03:53:24.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:24.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:24.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:24.1|Info|ExistingExtraFileService|Found 68 possible extra files, imported 68 files.
+2022-06-19 03:53:24.2|Info|RefreshSeriesService|Skipping refresh of series: The Pentaverate
+2022-06-19 03:53:24.2|Info|DiskScanService|Scanning The Pentaverate
+2022-06-19 03:53:24.2|Info|DiskScanService|Completed scanning disk for The Pentaverate
+2022-06-19 03:53:24.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:24.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:24.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:24.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:24.3|Info|RefreshSeriesService|Skipping refresh of series: Person of Interest
+2022-06-19 03:53:24.3|Info|DiskScanService|Scanning Person of Interest
+2022-06-19 03:53:24.7|Info|DiskScanService|Completed scanning disk for Person of Interest
+2022-06-19 03:53:24.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:24.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:24.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:24.9|Info|ExistingExtraFileService|Found 101 possible extra files, imported 101 files.
+2022-06-19 03:53:25.0|Info|RefreshSeriesService|Skipping refresh of series: The Pet Girl of Sakurasou
+2022-06-19 03:53:25.0|Info|DiskScanService|Scanning The Pet Girl of Sakurasou
+2022-06-19 03:53:25.1|Info|DiskScanService|Completed scanning disk for The Pet Girl of Sakurasou
+2022-06-19 03:53:25.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:25.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:25.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:25.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:25.2|Info|RefreshSeriesService|Skipping refresh of series: Phineas and Ferb
+2022-06-19 03:53:25.2|Info|DiskScanService|Scanning Phineas and Ferb
+2022-06-19 03:53:25.7|Info|DiskScanService|Completed scanning disk for Phineas and Ferb
+2022-06-19 03:53:25.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:25.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:25.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:25.8|Info|ExistingExtraFileService|Found 9 possible extra files, imported 9 files.
+2022-06-19 03:53:25.9|Info|RefreshSeriesService|Skipping refresh of series: Psych
+2022-06-19 03:53:25.9|Info|DiskScanService|Scanning Psych
+2022-06-19 03:53:26.1|Info|DiskScanService|Completed scanning disk for Psych
+2022-06-19 03:53:26.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:26.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:26.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:26.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:26.3|Info|RefreshSeriesService|Skipping refresh of series: Re: ZERO, Starting Life in Another World
+2022-06-19 03:53:26.3|Info|DiskScanService|Scanning Re: ZERO, Starting Life in Another World
+2022-06-19 03:53:26.5|Info|DiskScanService|Completed scanning disk for Re: ZERO, Starting Life in Another World
+2022-06-19 03:53:26.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:26.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:26.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:26.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:26.6|Info|RefreshSeriesService|Updating Resident Alien
+2022-06-19 03:53:26.9|Info|RefreshEpisodeService|Starting episode info refresh for: [368166][Resident Alien]
+2022-06-19 03:53:26.9|Info|RefreshEpisodeService|Finished episode refresh for series: [368166][Resident Alien].
+2022-06-19 03:53:26.9|Info|DiskScanService|Scanning Resident Alien
+2022-06-19 03:53:27.0|Info|DiskScanService|Completed scanning disk for Resident Alien
+2022-06-19 03:53:27.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:27.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:27.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:27.0|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:53:27.1|Info|RefreshSeriesService|Updating Rick and Morty
+2022-06-19 03:53:27.4|Info|RefreshEpisodeService|Starting episode info refresh for: [275274][Rick and Morty]
+2022-06-19 03:53:27.6|Info|RefreshEpisodeService|Finished episode refresh for series: [275274][Rick and Morty].
+2022-06-19 03:53:27.7|Info|DiskScanService|Scanning Rick and Morty
+2022-06-19 03:53:27.9|Info|DiskScanService|Completed scanning disk for Rick and Morty
+2022-06-19 03:53:27.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:27.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:27.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:27.9|Info|ExistingExtraFileService|Found 4 possible extra files, imported 4 files.
+2022-06-19 03:53:28.0|Info|RefreshSeriesService|Skipping refresh of series: Sabrina, The Teenage Witch
+2022-06-19 03:53:28.0|Info|DiskScanService|Scanning Sabrina, The Teenage Witch
+2022-06-19 03:53:28.4|Info|DiskScanService|Completed scanning disk for Sabrina, The Teenage Witch
+2022-06-19 03:53:28.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:28.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:28.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:28.8|Info|ExistingExtraFileService|Found 111 possible extra files, imported 111 files.
+2022-06-19 03:53:29.0|Info|RefreshSeriesService|Skipping refresh of series: Saekano: How to Raise a Boring Girlfriend
+2022-06-19 03:53:29.0|Info|DiskScanService|Scanning Saekano: How to Raise a Boring Girlfriend
+2022-06-19 03:53:29.0|Info|DiskScanService|Completed scanning disk for Saekano: How to Raise a Boring Girlfriend
+2022-06-19 03:53:29.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:29.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:29.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:29.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:29.1|Info|RefreshSeriesService|Skipping refresh of series: Saga of Tanya the Evil
+2022-06-19 03:53:29.1|Info|DiskScanService|Scanning Saga of Tanya the Evil
+2022-06-19 03:53:29.2|Info|DiskScanService|Completed scanning disk for Saga of Tanya the Evil
+2022-06-19 03:53:29.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:29.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:29.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:29.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:29.3|Info|RefreshSeriesService|Updating Science Fell in Love, So I Tried to Prove It
+2022-06-19 03:53:29.6|Info|RefreshEpisodeService|Starting episode info refresh for: [368358][Science Fell in Love, So I Tried to Prove It]
+2022-06-19 03:53:29.7|Info|RefreshEpisodeService|Finished episode refresh for series: [368358][Science Fell in Love, So I Tried to Prove It].
+2022-06-19 03:53:30.0|Info|DiskScanService|Scanning Science Fell in Love, So I Tried to Prove It
+2022-06-19 03:53:30.1|Info|DiskScanService|Completed scanning disk for Science Fell in Love, So I Tried to Prove It
+2022-06-19 03:53:30.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:30.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:30.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:30.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:30.2|Info|RefreshSeriesService|Skipping refresh of series: Seitokai Yakuindomo
+2022-06-19 03:53:30.2|Info|DiskScanService|Scanning Seitokai Yakuindomo
+2022-06-19 03:53:30.3|Info|DiskScanService|Completed scanning disk for Seitokai Yakuindomo
+2022-06-19 03:53:30.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:30.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:30.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:30.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:30.4|Info|RefreshSeriesService|Skipping refresh of series: The Seven Deadly Sins
+2022-06-19 03:53:30.4|Info|DiskScanService|Scanning The Seven Deadly Sins
+2022-06-19 03:53:30.7|Info|DiskScanService|Completed scanning disk for The Seven Deadly Sins
+2022-06-19 03:53:30.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:30.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:30.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:30.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:30.8|Info|RefreshSeriesService|Updating Severance
+2022-06-19 03:53:31.0|Info|RefreshEpisodeService|Starting episode info refresh for: [371980][Severance]
+2022-06-19 03:53:31.1|Info|RefreshEpisodeService|Finished episode refresh for series: [371980][Severance].
+2022-06-19 03:53:31.1|Info|DiskScanService|Scanning Severance
+2022-06-19 03:53:31.2|Info|DiskScanService|Completed scanning disk for Severance
+2022-06-19 03:53:31.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:31.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:31.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:31.2|Info|ExistingExtraFileService|Found 8 possible extra files, imported 8 files.
+2022-06-19 03:53:31.2|Info|RefreshSeriesService|Skipping refresh of series: Silver Spoon
+2022-06-19 03:53:31.3|Info|DiskScanService|Scanning Silver Spoon
+2022-06-19 03:53:31.3|Info|DiskScanService|Completed scanning disk for Silver Spoon
+2022-06-19 03:53:31.3|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:31.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:31.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:31.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:31.5|Info|RefreshSeriesService|Skipping refresh of series: Smallville
+2022-06-19 03:53:31.5|Info|DiskScanService|Scanning Smallville
+2022-06-19 03:53:32.0|Info|DiskScanService|Completed scanning disk for Smallville
+2022-06-19 03:53:32.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:32.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:32.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:32.4|Info|ExistingExtraFileService|Found 204 possible extra files, imported 204 files.
+2022-06-19 03:53:32.5|Info|RefreshSeriesService|Updating Solar Opposites
+2022-06-19 03:53:33.3|Info|RefreshEpisodeService|Starting episode info refresh for: [375892][Solar Opposites]
+2022-06-19 03:53:33.4|Info|RefreshEpisodeService|Finished episode refresh for series: [375892][Solar Opposites].
+2022-06-19 03:53:33.5|Info|DiskScanService|Scanning Solar Opposites
+2022-06-19 03:53:33.5|Info|DiskScanService|Completed scanning disk for Solar Opposites
+2022-06-19 03:53:33.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:33.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:33.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:33.5|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:53:33.6|Info|RefreshSeriesService|Updating Solo leveling
+2022-06-19 03:53:34.0|Info|RefreshEpisodeService|Starting episode info refresh for: [389597][Solo leveling]
+2022-06-19 03:53:34.0|Info|RefreshEpisodeService|Finished episode refresh for series: [389597][Solo leveling].
+2022-06-19 03:53:34.0|Info|DiskScanService|Scanning Solo leveling
+2022-06-19 03:53:34.0|Info|DiskScanService|Completed scanning disk for Solo leveling
+2022-06-19 03:53:34.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:34.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:34.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:34.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:34.1|Info|RefreshSeriesService|Updating SPY x FAMILY
+2022-06-19 03:53:34.4|Info|RefreshEpisodeService|Starting episode info refresh for: [405920][SPY x FAMILY]
+2022-06-19 03:53:34.5|Info|RefreshEpisodeService|Finished episode refresh for series: [405920][SPY x FAMILY].
+2022-06-19 03:53:34.5|Info|DiskScanService|Scanning SPY x FAMILY
+2022-06-19 03:53:34.6|Info|DiskScanService|Completed scanning disk for SPY x FAMILY
+2022-06-19 03:53:34.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:34.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:34.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:34.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:34.6|Info|RefreshSeriesService|Updating Stargirl
+2022-06-19 03:53:34.8|Info|RefreshEpisodeService|Starting episode info refresh for: [361868][Stargirl]
+2022-06-19 03:53:34.9|Info|RefreshEpisodeService|Finished episode refresh for series: [361868][Stargirl].
+2022-06-19 03:53:34.9|Info|DiskScanService|Scanning Stargirl
+2022-06-19 03:53:35.0|Info|DiskScanService|Completed scanning disk for Stargirl
+2022-06-19 03:53:35.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:35.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:35.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:35.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:35.1|Info|RefreshSeriesService|Skipping refresh of series: Steins;Gate
+2022-06-19 03:53:35.1|Info|DiskScanService|Scanning Steins;Gate
+2022-06-19 03:53:35.2|Info|DiskScanService|Completed scanning disk for Steins;Gate
+2022-06-19 03:53:35.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:35.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:35.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:35.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:35.3|Info|RefreshSeriesService|Updating Steve Austin's Broken Skull Sessions
+2022-06-19 03:53:35.8|Info|RefreshEpisodeService|Starting episode info refresh for: [372754][Steve Austin's Broken Skull Sessions]
+2022-06-19 03:53:35.8|Info|RefreshEpisodeService|Finished episode refresh for series: [372754][Steve Austin's Broken Skull Sessions].
+2022-06-19 03:53:35.8|Info|DiskScanService|Scanning Steve Austin's Broken Skull Sessions
+2022-06-19 03:53:35.9|Info|DiskScanService|Completed scanning disk for Steve Austin's Broken Skull Sessions
+2022-06-19 03:53:35.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:35.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:35.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:35.9|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:36.0|Info|RefreshSeriesService|Updating Succession
+2022-06-19 03:53:36.3|Info|RefreshEpisodeService|Starting episode info refresh for: [338186][Succession]
+2022-06-19 03:53:36.3|Info|RefreshEpisodeService|Finished episode refresh for series: [338186][Succession].
+2022-06-19 03:53:36.4|Info|DiskScanService|Scanning Succession
+2022-06-19 03:53:36.5|Info|DiskScanService|Completed scanning disk for Succession
+2022-06-19 03:53:36.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:36.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:36.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:36.5|Info|ExistingExtraFileService|Found 8 possible extra files, imported 8 files.
+2022-06-19 03:53:36.6|Info|RefreshSeriesService|Skipping refresh of series: Suits
+2022-06-19 03:53:36.6|Info|DiskScanService|Scanning Suits
+2022-06-19 03:53:37.1|Info|DiskScanService|Completed scanning disk for Suits
+2022-06-19 03:53:37.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:37.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:37.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:37.3|Info|ExistingExtraFileService|Found 99 possible extra files, imported 99 files.
+2022-06-19 03:53:37.4|Info|RefreshSeriesService|Updating Ted Lasso
+2022-06-19 03:53:37.6|Info|RefreshEpisodeService|Starting episode info refresh for: [383203][Ted Lasso]
+2022-06-19 03:53:37.7|Info|RefreshEpisodeService|Finished episode refresh for series: [383203][Ted Lasso].
+2022-06-19 03:53:37.7|Info|DiskScanService|Scanning Ted Lasso
+2022-06-19 03:53:37.8|Info|DiskScanService|Completed scanning disk for Ted Lasso
+2022-06-19 03:53:37.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:37.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:37.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:37.8|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:53:37.9|Info|RefreshSeriesService|Skipping refresh of series: Terminator: The Sarah Connor Chronicles
+2022-06-19 03:53:37.9|Info|DiskScanService|Scanning Terminator: The Sarah Connor Chronicles
+2022-06-19 03:53:38.0|Info|DiskScanService|Completed scanning disk for Terminator: The Sarah Connor Chronicles
+2022-06-19 03:53:38.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:38.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:38.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:38.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:38.1|Info|RefreshSeriesService|Updating To Your Eternity
+2022-06-19 03:53:38.4|Info|RefreshEpisodeService|Starting episode info refresh for: [375271][To Your Eternity]
+2022-06-19 03:53:38.4|Info|RefreshEpisodeService|Finished episode refresh for series: [375271][To Your Eternity].
+2022-06-19 03:53:38.8|Info|DiskScanService|Scanning To Your Eternity
+2022-06-19 03:53:38.8|Info|DiskScanService|Completed scanning disk for To Your Eternity
+2022-06-19 03:53:38.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:38.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:38.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:38.9|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:38.9|Info|RefreshSeriesService|Skipping refresh of series: Today’s Menu for the Emiya Family
+2022-06-19 03:53:38.9|Info|DiskScanService|Scanning Today’s Menu for the Emiya Family
+2022-06-19 03:53:39.0|Info|DiskScanService|Completed scanning disk for Today’s Menu for the Emiya Family
+2022-06-19 03:53:39.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:39.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:39.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:39.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:39.1|Info|RefreshSeriesService|Skipping refresh of series: Tokyo Ghoul
+2022-06-19 03:53:39.1|Info|DiskScanService|Scanning Tokyo Ghoul
+2022-06-19 03:53:39.2|Info|DiskScanService|Completed scanning disk for Tokyo Ghoul
+2022-06-19 03:53:39.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:39.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:39.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:39.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:39.3|Info|RefreshSeriesService|Updating Tokyo Revengers
+2022-06-19 03:53:39.6|Info|RefreshEpisodeService|Starting episode info refresh for: [393478][Tokyo Revengers]
+2022-06-19 03:53:39.7|Info|RefreshEpisodeService|Finished episode refresh for series: [393478][Tokyo Revengers].
+2022-06-19 03:53:39.7|Info|DiskScanService|Scanning Tokyo Revengers
+2022-06-19 03:53:39.8|Info|DiskScanService|Completed scanning disk for Tokyo Revengers
+2022-06-19 03:53:39.8|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:39.8|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:39.8|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:39.8|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:39.9|Info|RefreshSeriesService|Updating Tomodachi Game
+2022-06-19 03:53:40.2|Info|RefreshEpisodeService|Starting episode info refresh for: [412031][Tomodachi Game]
+2022-06-19 03:53:40.3|Info|RefreshEpisodeService|Finished episode refresh for series: [412031][Tomodachi Game].
+2022-06-19 03:53:40.4|Info|DiskScanService|Scanning Tomodachi Game
+2022-06-19 03:53:40.5|Info|DiskScanService|Completed scanning disk for Tomodachi Game
+2022-06-19 03:53:40.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:40.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:40.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:40.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:40.6|Info|RefreshSeriesService|Skipping refresh of series: Tower of God
+2022-06-19 03:53:40.6|Info|DiskScanService|Scanning Tower of God
+2022-06-19 03:53:40.6|Info|DiskScanService|Completed scanning disk for Tower of God
+2022-06-19 03:53:40.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:40.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:40.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:40.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:40.7|Info|RefreshSeriesService|Updating Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs
+2022-06-19 03:53:41.1|Info|RefreshEpisodeService|Starting episode info refresh for: [412826][Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs]
+2022-06-19 03:53:41.1|Info|RefreshEpisodeService|Finished episode refresh for series: [412826][Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs].
+2022-06-19 03:53:41.6|Info|DiskScanService|Scanning Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs
+2022-06-19 03:53:41.7|Info|DiskScanService|Completed scanning disk for Trapped in a Dating Sim: The World of Otome Games Is Tough for Mobs
+2022-06-19 03:53:41.7|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:41.7|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:41.7|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:41.7|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:41.7|Info|RefreshSeriesService|Skipping refresh of series: Travelers (2016)
+2022-06-19 03:53:41.8|Info|DiskScanService|Scanning Travelers (2016)
+2022-06-19 03:53:41.8|Info|DiskScanService|Completed scanning disk for Travelers (2016)
+2022-06-19 03:53:41.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:41.9|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:41.9|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:41.9|Info|ExistingExtraFileService|Found 9 possible extra files, imported 9 files.
+2022-06-19 03:53:42.0|Info|RefreshSeriesService|Skipping refresh of series: Trinity Seven
+2022-06-19 03:53:42.0|Info|DiskScanService|Scanning Trinity Seven
+2022-06-19 03:53:42.0|Info|DiskScanService|Completed scanning disk for Trinity Seven
+2022-06-19 03:53:42.0|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:42.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:42.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:42.0|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:53:42.1|Info|RefreshSeriesService|Skipping refresh of series: True Detective
+2022-06-19 03:53:42.1|Info|DiskScanService|Scanning True Detective
+2022-06-19 03:53:42.2|Info|DiskScanService|Completed scanning disk for True Detective
+2022-06-19 03:53:42.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:53:42.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:53:42.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:53:42.2|Info|ExistingExtraFileService|Found 2 possible extra files, imported 2 files.
+2022-06-19 03:53:42.3|Info|RefreshSeriesService|Updating The Umbrella Academy
+2022-06-19 03:53:42.6|Info|RefreshEpisodeService|Starting episode info refresh for: [353764][The Umbrella Academy]
+2022-06-19 03:53:42.6|Info|RefreshEpisodeService|Finished episode refresh for series: [353764][The Umbrella Academy].
+2022-06-19 03:54:05.8|Info|DiskScanService|Scanning The Umbrella Academy
+2022-06-19 03:54:05.9|Info|DiskScanService|Completed scanning disk for The Umbrella Academy
+2022-06-19 03:54:05.9|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:06.0|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:06.0|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:06.0|Info|ExistingExtraFileService|Found 3 possible extra files, imported 3 files.
+2022-06-19 03:54:06.0|Info|RefreshSeriesService|Skipping refresh of series: Violet Evergarden
+2022-06-19 03:54:06.0|Info|DiskScanService|Scanning Violet Evergarden
+2022-06-19 03:54:06.0|Info|DiskScanService|Completed scanning disk for Violet Evergarden
+2022-06-19 03:54:06.1|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:06.1|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:06.1|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:06.1|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:06.1|Info|RefreshSeriesService|Skipping refresh of series: Vivy: Fluorite Eye's Song
+2022-06-19 03:54:06.2|Info|DiskScanService|Scanning Vivy: Fluorite Eye's Song
+2022-06-19 03:54:06.2|Info|DiskScanService|Completed scanning disk for Vivy: Fluorite Eye's Song
+2022-06-19 03:54:06.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:06.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:06.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:06.3|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:06.3|Info|RefreshSeriesService|Skipping refresh of series: WandaVision
+2022-06-19 03:54:06.3|Info|DiskScanService|Scanning WandaVision
+2022-06-19 03:54:06.3|Info|DiskScanService|Completed scanning disk for WandaVision
+2022-06-19 03:54:06.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:06.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:06.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:06.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:06.4|Info|RefreshSeriesService|Skipping refresh of series: Watchmen
+2022-06-19 03:54:06.4|Info|DiskScanService|Scanning Watchmen
+2022-06-19 03:54:06.5|Info|DiskScanService|Completed scanning disk for Watchmen
+2022-06-19 03:54:06.5|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:06.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:06.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:06.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:06.6|Info|RefreshSeriesService|Updating Westworld
+2022-06-19 03:54:06.9|Info|RefreshEpisodeService|Starting episode info refresh for: [296762][Westworld]
+2022-06-19 03:54:07.0|Info|RefreshEpisodeService|Finished episode refresh for series: [296762][Westworld].
+2022-06-19 03:54:07.0|Info|DiskScanService|Scanning Westworld
+2022-06-19 03:54:07.2|Info|DiskScanService|Completed scanning disk for Westworld
+2022-06-19 03:54:07.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:07.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:07.2|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:07.2|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:07.3|Info|RefreshSeriesService|Updating What If…?
+2022-06-19 03:54:07.5|Info|RefreshEpisodeService|Starting episode info refresh for: [367147][What If…?]
+2022-06-19 03:54:07.5|Info|RefreshEpisodeService|Finished episode refresh for series: [367147][What If…?].
+2022-06-19 03:54:07.6|Info|DiskScanService|Scanning What If…?
+2022-06-19 03:54:07.6|Info|DiskScanService|Completed scanning disk for What If…?
+2022-06-19 03:54:07.6|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:07.6|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:07.6|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:07.6|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:07.7|Info|RefreshSeriesService|Updating What We Do in the Shadows
+2022-06-19 03:54:08.0|Info|RefreshEpisodeService|Starting episode info refresh for: [358211][What We Do in the Shadows]
+2022-06-19 03:54:08.1|Info|RefreshEpisodeService|Finished episode refresh for series: [358211][What We Do in the Shadows].
+2022-06-19 03:54:08.1|Info|DiskScanService|Scanning What We Do in the Shadows
+2022-06-19 03:54:08.2|Info|DiskScanService|Completed scanning disk for What We Do in the Shadows
+2022-06-19 03:54:08.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:08.2|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:08.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:08.3|Info|ExistingExtraFileService|Found 28 possible extra files, imported 28 files.
+2022-06-19 03:54:08.3|Info|RefreshSeriesService|Skipping refresh of series: Yamada-kun and the Seven Witches (2015)
+2022-06-19 03:54:08.4|Info|DiskScanService|Scanning Yamada-kun and the Seven Witches (2015)
+2022-06-19 03:54:08.4|Info|DiskScanService|Completed scanning disk for Yamada-kun and the Seven Witches (2015)
+2022-06-19 03:54:08.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:08.5|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:08.5|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:08.5|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 03:54:08.5|Info|RefreshSeriesService|Updating Young Sheldon
+2022-06-19 03:54:08.7|Info|RefreshEpisodeService|Starting episode info refresh for: [328724][Young Sheldon]
+2022-06-19 03:54:08.9|Info|RefreshEpisodeService|Finished episode refresh for series: [328724][Young Sheldon].
+2022-06-19 03:54:09.0|Info|DiskScanService|Scanning Young Sheldon
+2022-06-19 03:54:09.2|Info|DiskScanService|Completed scanning disk for Young Sheldon
+2022-06-19 03:54:09.2|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:09.3|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:09.3|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:09.3|Info|ExistingExtraFileService|Found 26 possible extra files, imported 26 files.
+2022-06-19 03:54:09.4|Info|RefreshSeriesService|Skipping refresh of series: Zach Stone Is Gonna Be Famous
+2022-06-19 03:54:09.4|Info|DiskScanService|Scanning Zach Stone Is Gonna Be Famous
+2022-06-19 03:54:09.4|Info|DiskScanService|Completed scanning disk for Zach Stone Is Gonna Be Famous
+2022-06-19 03:54:09.4|Info|ExistingMetadataImporter|Found 0 existing metadata files
+2022-06-19 03:54:09.4|Info|ExistingSubtitleImporter|Found 0 existing subtitle files
+2022-06-19 03:54:09.4|Info|ExistingOtherExtraImporter|Found 0 existing other extra files
+2022-06-19 03:54:09.4|Info|ExistingExtraFileService|Found 0 possible extra files, imported 0 files.
+2022-06-19 04:00:09.3|Error|TaskExtensions|Task Error
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteScalar () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.InsertQueryBuilder`1[T].Execute () [0x00046] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\InsertQueryBuilder.cs:140 
+  at Marr.Data.DataMapper.Insert[T] (T entity) [0x0005f] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\DataMapper.cs:728 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].Insert (TModel model) [0x00030] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:119 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x0015a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:126 
+  at System.Dynamic.UpdateDelegates.UpdateAndExecute4[T0,T1,T2,T3,TRet] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2, T3 arg3) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper delegate-invoke) System.Func`6[System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,System.Object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger,System.Object].invoke_TResult_T1_T2_T3_T4_T5(System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandQueueManager,object,NzbDrone.Core.Messaging.Commands.CommandPriority,NzbDrone.Core.Messaging.Commands.CommandTrigger)
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Push (System.String commandName, System.Nullable`1[T] lastExecutionTime, NzbDrone.Core.Messaging.Commands.CommandPriority priority, NzbDrone.Core.Messaging.Commands.CommandTrigger trigger) [0x000b7] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:139 
+  at NzbDrone.Core.Jobs.Scheduler.ExecuteCommands () [0x00043] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Jobs\Scheduler.cs:42 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+
+2022-06-19 04:00:09.3|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 04:00:14.4|Error|CommandExecutor|Error occurred while executing task RssSync
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:75 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Start (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00016] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:180 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 04:04:15.1|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Fail (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message, System.Exception e) [0x0000c] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:194 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000ce] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:95 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 04:09:17.1|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
+2022-06-19 04:46:24.4|Error|CommandExecutor|Error occurred while executing task RefreshMonitoredDownloads
+
+[v3.0.8.1507] code = Busy (5), message = System.Data.SQLite.SQLiteException (0x800007AF): database is locked
+database is locked
+  at System.Data.SQLite.SQLite3.Step (System.Data.SQLite.SQLiteStatement stmt) [0x000ba] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader.NextResult () [0x00174] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteDataReader..ctor (System.Data.SQLite.SQLiteCommand cmd, System.Data.CommandBehavior behave) [0x0008e] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at (wrapper remoting-invoke-with-check) System.Data.SQLite.SQLiteDataReader..ctor(System.Data.SQLite.SQLiteCommand,System.Data.CommandBehavior)
+  at System.Data.SQLite.SQLiteCommand.ExecuteReader (System.Data.CommandBehavior behavior) [0x0000c] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery (System.Data.CommandBehavior behavior) [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at System.Data.SQLite.SQLiteCommand.ExecuteNonQuery () [0x00006] in <cf516e4846354910b3d60749c894b1bf>:0 
+  at Marr.Data.QGen.UpdateQueryBuilder`1[T].Execute () [0x0003b] in M:\BuildAgent\work\63739567f01dbcc2\src\Marr.Data\QGen\UpdateQueryBuilder.cs:157 
+  at NzbDrone.Core.Datastore.BasicRepository`1[TModel].SetFields (TModel model, System.Linq.Expressions.Expression`1[System.Func`2[TModel,System.Object]][] properties) [0x0002a] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Datastore\BasicRepository.cs:246 
+  at NzbDrone.Core.Messaging.Commands.CommandRepository.End (NzbDrone.Core.Messaging.Commands.CommandModel command) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandRepository.cs:80 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Update (NzbDrone.Core.Messaging.Commands.CommandModel command, NzbDrone.Core.Messaging.Commands.CommandStatus status, System.String message) [0x0005e] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:247 
+  at NzbDrone.Core.Messaging.Commands.CommandQueueManager.Complete (NzbDrone.Core.Messaging.Commands.CommandModel command, System.String message) [0x00000] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandQueueManager.cs:185 
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommand[TCommand] (TCommand command, NzbDrone.Core.Messaging.Commands.CommandModel commandModel) [0x000e0] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:96 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1, T2 arg2) [0x00035] in <5b415632df1f4365ae2242b1a257bb5b>:0 
+  at (wrapper dynamic-method) System.Object.CallSite.Target(System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,NzbDrone.Core.Messaging.Commands.CommandExecutor,object,NzbDrone.Core.Messaging.Commands.CommandModel)
+  at NzbDrone.Core.Messaging.Commands.CommandExecutor.ExecuteCommands () [0x00027] in M:\BuildAgent\work\63739567f01dbcc2\src\NzbDrone.Core\Messaging\Commands\CommandExecutor.cs:41 
+
