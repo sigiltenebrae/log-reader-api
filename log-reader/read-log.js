@@ -6,35 +6,29 @@ app.use(cors({
     origin: '*'
 }));
 
-
-let logs = {
-    'Sonarr': 'M:/cfg/sonarr/logs/sonarr.txt',
-    'Sonarr-sma': 'M:/cfg/sonarr-sma/sma.log',
-    'Radarr': 'M:/cfg/radarr/logs/radarr.txt',
-    'Radarr-sma': 'M:/cfg/radarr-sma/sma.log',
-}
-
 app.get('/log/:module', function(req, res) {
-    if (logs[req.params.module]) {
-        fs.readFile(logs[req.params.module], 'utf8', function (err, data) {
-            if(err) {
-                throw err;
+    console.log(atob(req.params.module));
+    fs.readFile(atob(req.params.module), 'utf8', function (err, data) {
+        if(err) {
+            res.send(err.message);
+            return;
+        }
+        var array = data.toString().split('\n');
+        var out_array= [];
+        if (req.query.lines) {
+            for (let i = 0; i < req.query.lines; i++) {
+                out_array.push(array[array.length - 1 - i]);
             }
-            var array = data.toString().split('\n');
-            var out_array= [];
-            if (req.query.lines) {
-                for (let i = 0; i < req.query.lines; i++) {
-                    out_array.push(array[array.length - 1 - i]);
-                }
-                out_array.reverse();
-                res.send(out_array);
-            }
-            else {
-                res.send(data);
-            }
+            out_array.reverse();
+            res.json({log: out_array});
+        }
+        else {
+            array.reverse();
+            res.json({log: array});
+            console.log('sent')
+        }
 
-        });
-    }
+    });
 });
 
 var server = app.listen(8081, function() {
